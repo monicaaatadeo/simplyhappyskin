@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const DB_URI = process.send.MONGODB_URI || 'mongodb://localhost:27017/simplyhappyskin'
+const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/simplyhappyskin'
 
 // === CONNECT MONGO DB === //
 mongoose.connect(DB_URI, {

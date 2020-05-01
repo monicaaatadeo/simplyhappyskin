@@ -1,9 +1,9 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
-const PORT = process.env.PORT || 4000
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-const db = require('./models')
+const db = require('./models');
 
 
 //parse incoming encoded form data, populate req.body object

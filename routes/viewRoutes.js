@@ -24,5 +24,17 @@ router.get('/signup', (req, res) => {
   });
 });
 
+// ======== PROFILE ======== //
+router.get('/profile', (req, res) => {
+  // if (!req.session.currentUser) {
+  //   // Unauthorized, Redirect to Login Page
+  //   return res.redirect('/login');
+  // }
+
+  res.sendFile('views/profile.html', {
+    root: __dirname + '/../',
+  });
+});
+
 
 module.exports = router;

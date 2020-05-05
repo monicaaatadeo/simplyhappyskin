@@ -31,7 +31,7 @@ function handleSignupSubmit(event) {
     .then((res) => {
       if (res.status === 201) {
         console.log(res);
-        window.location = '/';
+        window.location = '/signup';
       } else {
         console.log(res);
       }

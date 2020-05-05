@@ -14,7 +14,7 @@ fetch(`${API_BASE}/products`)
       }
       
       function getProductTemplate(product) {
-        return s
+        return
         `
               <div class="col-md-4 mb-4">
               <div id="${product._id}" class="card  shadow-lg p-3 mb-5 bg-white rounded ">

@@ -26,14 +26,14 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 
+    <!-- MAIN JS -->
+    <script defer src="/scripts/loginmodal.js"></script>
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="/styles/main.css">
 
     <title>Simply Happy Skin</title>
 
-</head>
-
-<body>
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Simply Happy Skin</a>
@@ -46,13 +46,47 @@
         <a class="nav-item nav-link" href="/products">Products</a>
         <a class="nav-item nav-link" href="/profile">Profile</a>
         <a class="nav-item nav-link" href="/signup">Sign Up</a>
+        <a class="nav-item nav-link" href="" data-toggle="modal" data-target="#elegantModalForm">Log In</a>
         <a class="nav-item nav-link" href="/infographs">Infographs</a>
       </div>
     </div>
   </nav>
-  
-  <h1 class = 'display-3 text-muted text-center'>Simply Happy Skin</h1>
 
+<!-- Login Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content form-elegant">
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Log In</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="loginForm">
+        <div class="modal-body mx-4">
+          <div class="md-form mb-5">
+            <label data-error="wrong" data-success="right" for="login-email">Email</label>
+            <input type="email" id="login-email" class="form-control validate">
+          </div>
+          <div class="md-form pb-3">
+            <label data-error="wrong" data-success="right" for="login-pass">Password</label>
+            <input type="password" id="login-pass" class="form-control validate">
+          </div>
+          <div class="text-center mb-3">
+            <button type="button" class="btn btn-primary btn-block btn-rounded z-depth-1a">Log In</button>
+          </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</head>
+
+
+<body>
+<h1 class = 'display-3 text-muted text-center'>Simply Happy Skin</h1>
   <!-- Bootstrap Carousel -->
   <div class="bd-example">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -65,20 +99,17 @@
         <div class="carousel-item active">
           <img src="/images/carousel1.jpg" class="d-block w-100 img-fluid" alt="Responsive image">
           <div class="carousel-caption d-none d-md-block">
-            <!-- <a class="text-decoration-none text-white font-weight-bold" href = "supplies">MAKE YOUR SUPPLIES WISHLIST HERE!</a> -->
           </div>
         </div>
         <div class="carousel-item">
           <img src="/images/carousel2.jpg" class="d-block w-100 img-fluid" alt="Responsive image">
           <div class="carousel-caption d-none d-md-block">
-          <!-- <a class="text-decoration-none font-weight-bold" href = "supplies">MAKE YOUR SUPPLIES WISHLIST HERE!</a> -->
   
           </div>
         </div>
           <div class="carousel-item">
             <img src="/images/carousel3.jpg" class="d-block w-100 img-fluid" alt="Responsive image">
             <div class="carousel-caption d-none d-md-block">
-            <!-- <a class="text-decoration-none text-white font-weight-bold" href = "supplies">MAKE YOUR SUPPLIES WISHLIST HERE!</a> -->
             </div>
           </div>
   
@@ -115,11 +146,13 @@
       </div>
     </div>
   </div>
-  
+
+</body>  
+
 <br>
   <footer class="bg-dark text-center text-light pt-2 pb-2">
     <p class="mb-0">2020 SimplyHappySkin, Inc.</p>
   </footer>
     
-</body>
+
 </html>

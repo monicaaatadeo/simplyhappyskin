@@ -41,6 +41,55 @@ const signup = (req, res) => {
 };
 
 
+// POST Session Create
+const login = (req, res) => {
+
+  // Find User By Email
+  db.User.findOne({email: req.body.email}, (err, foundUser) => {
+    if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+
+    // Verify User Account Exists
+    if (!foundUser) {
+      return res.status(400).json({status: 400, message: 'Invalid credentials'});
+    }
+
+    // Hash Password From User Request and Compare Against Found User Password
+    bcrypt.compare(req.body.password, foundUser.password, (err, isMatch) => {
+      if (err) return res.status(400).json({status: 400, message: 'Something went wrong, please try again'});
+
+      if (isMatch) {
+        // Create a New Session (Key to the Kingdom)
+        req.session.currentUser = {
+          _id: foundUser._id,
+          name: foundUser.name,
+          email: foundUser.email,
+        };
+
+        res.status(200).json({status: 200, user: req.session.currentUser});
+      } else {
+        // Passwords Do Not Match, Respond with User Error
+        res.status(400).json({status: 400, error: 'Invalid credentials, please try again'});
+      }
+    });
+  });
+};
+
+
+// DELETE Session Destroy
+const logout = (req, res) => {
+  if (!req.session.currentUser) {
+    // Not Authorized
+    return res.status(401).json({status: 401, error: 'Unauthorized, please login and try again'});
+  }
+  
+  // Destroy Session and Respond with Success
+  req.session.destroy((err) => {
+    if (err) return res.status(400).json({status: 400, message: 'Something went wrong, please try again'});
+
+    res.status(200).json({status: 200, message: 'Success'});
+  });
+};
+
 // Verify Route for Development/Testing
 const verify = (req, res) => {
     if (!req.session.currentUser) {
@@ -58,5 +107,7 @@ const verify = (req, res) => {
 
 module.exports = {
   signup,
+  login,
+  logout,
   verify,
 };

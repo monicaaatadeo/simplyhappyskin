@@ -1,5 +1,5 @@
-const API_BASE = '/api/v1'
-const products = document.getElementById('products')
+const API_BASE = '/api/v1';
+const products = document.getElementById('productslisted');
 
 fetch(`${API_BASE}/products`)
     .then((stream) => stream.json())
@@ -23,11 +23,11 @@ fetch(`${API_BASE}/products`)
                   <h5 class="card-title">
                     ${product.name}
                   </h5>
-                  <p class="card-text">${product.description}</p>
+                  <p class="card-text">${product.type}</p>
                   <a href="/products/${product._id}" class="btn  btn-outline-info float-right">View</a>
                 </div>
               </div>
             </div>
-        `
+        `;
 
       }

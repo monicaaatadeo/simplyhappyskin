@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const List = require('./list')
-Schema = mongoose.Schema
+const Schema = mongoose.Schema
 
 const UserSchema = new Schema ({
 
@@ -21,4 +21,5 @@ const UserSchema = new Schema ({
 })
 
 const User = mongoose.model('User', UserSchema)
-module.exports = User
+
+module.exports = User;

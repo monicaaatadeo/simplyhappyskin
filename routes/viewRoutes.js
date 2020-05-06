@@ -28,7 +28,7 @@ router.get('/signup', (req, res) => {
 router.get('/profile', (req, res) => {
   // if (!req.session.currentUser) {
   //   // Unauthorized, Redirect to Login Page
-  //   return res.redirect('/login');
+  //   return res.redirect('/signup');
   // }
 
   res.sendFile('views/profile.html', {

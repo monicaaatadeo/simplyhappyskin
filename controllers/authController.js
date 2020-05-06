@@ -5,7 +5,6 @@ const db = require('../models');
 // POST Sign Up - User Create
 const signup = (req, res) => {
 
-
   db.User.findOne({email: req.body.email}, (err, foundUser) => {
     if (err) return res.status(400).json({status: 400, message: 'Something went wrong, please try again'});
 

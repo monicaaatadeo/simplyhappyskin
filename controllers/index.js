@@ -1,4 +1,4 @@
 module.exports = {
     authCtrl: require('./authController'),
-    apiCtrl: require('./apiController')
+    apiCtrl: require('./apiController'),
   };

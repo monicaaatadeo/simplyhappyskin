@@ -8,6 +8,8 @@ const ctrl = require('../controllers');
 // ======== PRODUCTS ======== //
 router.get('/products', ctrl.apiCtrl.findAll);
 
+router.get('/products/:id', ctrl.apiCtrl.findOne);
+
 
 // ======== AUTH ======== //
 router.post('/signup', ctrl.authCtrl.signup);

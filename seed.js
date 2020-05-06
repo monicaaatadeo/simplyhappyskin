@@ -104,10 +104,7 @@ db.Products.deleteMany({}, (err, result) => {
     process.exit();
   }
 
-  // result = {n: number-of-matching-results, ok: 0 or 1, deletedCount: number-of-records-deleted}
   console.log(`Successfully deleted ${result.deletedCount} products.`);
-
-  // Create New Products
   console.log('Creating new products...');
 
   db.Products.create(products, (err, newProducts) => {

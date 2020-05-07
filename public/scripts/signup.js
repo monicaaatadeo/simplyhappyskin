@@ -1,5 +1,5 @@
 console.log('Signup JS');
-const form = document.getElementById('registerForm');
+const form = document.getElementById('signupForm');
 
 form.addEventListener('submit', handleSignupSubmit);
 
@@ -7,7 +7,7 @@ form.addEventListener('submit', handleSignupSubmit);
 function handleSignupSubmit(event) {
   event.preventDefault();
 
-  const name = document.getElementById('name').value;
+  let name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
@@ -31,7 +31,7 @@ function handleSignupSubmit(event) {
     .then((res) => {
       if (res.status === 201) {
         console.log(res);
-        window.location = '/signup';
+        window.location.pathname = '/profile';
       } else {
         console.log(res);
       }

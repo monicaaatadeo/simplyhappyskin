@@ -10,7 +10,7 @@ const signup = (req, res) => {
 
     // Verify User Does Not Already Exist
     if (foundUser) {
-      return res.status(400).json({status: 400, message: 'Account already registerd, please login'});
+      return res.status(400).json({status: 400, message: 'Account already registered, please login'});
     }
 
     // Generate Salt
@@ -33,6 +33,7 @@ const signup = (req, res) => {
           if (err) return res.status(400).json({status: 400, message: 'Something went wrong, please try again'});
 
           res.status(201).json({status: 201, message: 'Success'});
+          // res.redirect('/profile')
         });
       });
     });

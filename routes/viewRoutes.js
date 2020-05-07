@@ -17,6 +17,12 @@ router.get('/products', (req, res) => {
     });
   });
 
+  router.get('/products/:id', (req, res) => {
+    res.sendFile('views/productsview.html', {
+      root: __dirname + '/../',
+    });
+  });
+
 // ======== AUTH ======== //
 router.get('/signup', (req, res) => {
   res.sendFile('views/signup.html', {

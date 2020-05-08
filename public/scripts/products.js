@@ -25,7 +25,7 @@ fetch(`${API_BASE}/products`)
                   </h5>
                   <p class="card-text">Type: ${product.type}</p>
                   <p class="card-text">Skin Type: ${product.skin_type}</p>
-                  <a href="/products/${product._id}/add" class="btn  btn-outline-info float-right">Add to Routine</a>
+                  <a href="/profile/add/${product._id}" class="btn  btn-outline-info float-right">Add to Routine</a>
                 </div>
               </div>
             </div>

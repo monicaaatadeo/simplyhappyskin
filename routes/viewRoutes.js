@@ -23,6 +23,19 @@ router.get('/products', (req, res) => {
     });
   });
 
+//More Views
+router.get('/skintype', (req, res) => {
+  res.sendFile('views/skintype.html', {
+    root: __dirname + '/../',
+  });
+});
+
+router.get('/infographs', (req, res) => {
+  res.sendFile('views/infographs.html', {
+    root: __dirname + '/../',
+  });
+});
+
 // ======== AUTH ======== //
 router.get('/signup', (req, res) => {
   res.sendFile('views/signup.html', {

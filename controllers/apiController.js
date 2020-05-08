@@ -14,7 +14,7 @@ const findAll = (req, res) => {
     });
   };
 
-  const findOne = (req, res) => {
+  const show = (req, res) => {
     db.Products.findById(req.params.productsId, (err, foundProducts) => {
       if (err) {
         return res.status(400).json({ status: 400, error: "Products not found." });
@@ -24,7 +24,8 @@ const findAll = (req, res) => {
     });
   };
 
+
   module.exports = {
       findAll,
-      findOne,
+      show,
   }

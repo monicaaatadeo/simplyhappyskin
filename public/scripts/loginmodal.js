@@ -3,7 +3,7 @@ const loginForm = document.getElementById('loginForm');
 
 
 // Submit Event Listener
-loginForm.addEventListener('submit', handleLoginSubmit);
+loginForm.addEventListener('click', handleLoginSubmit);
 
 // Handle Submit
 function handleLoginSubmit(event) {
@@ -29,7 +29,7 @@ function handleLoginSubmit(event) {
     .then((stream) => stream.json())
     .then((res) => {
       if (res.status === 200) {
-        window.location = '/profile';
+        window.location.pathname = '/profile';
       } else {
         console.log(res);
       }

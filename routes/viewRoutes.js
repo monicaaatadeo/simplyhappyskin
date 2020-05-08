@@ -10,12 +10,38 @@ router.get('/', (req, res) => {
     });
   });
 
+//Profile Page
+router.get('/profile', (req, res) => {
+  res.sendFile('views/profile.html', {
+    root: __dirname + '/../',
+  });
+});
+
 //Products Page
 router.get('/products', (req, res) => {
     res.sendFile('views/products.html', {
       root: __dirname + '/../',
     });
   });
+
+  router.get('/products/:id/add', (req, res) => {
+    res.sendFile('views/profile.html', {
+      root: __dirname + '/../',
+    });
+  });
+
+//Static Views
+router.get('/skintype', (req, res) => {
+  res.sendFile('views/skintype.html', {
+    root: __dirname + '/../',
+  });
+});
+
+router.get('/infographs', (req, res) => {
+  res.sendFile('views/infographs.html', {
+    root: __dirname + '/../',
+  });
+});
 
 // ======== AUTH ======== //
 router.get('/signup', (req, res) => {

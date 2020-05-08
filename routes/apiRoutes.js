@@ -8,9 +8,7 @@ const ctrl = require('../controllers');
 // ======== PRODUCTS ======== //
 router.get('/products', ctrl.apiCtrl.findAll);
 
-router.post('/products', ctrl.apiCtrl.create); 
-
-router.get('/products/:id', ctrl.apiCtrl.findOne);
+router.get('/products/:id/add', ctrl.apiCtrl.show);
 
 
 // ======== AUTH ======== //

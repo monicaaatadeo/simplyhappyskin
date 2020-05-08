@@ -10,6 +10,13 @@ router.get('/', (req, res) => {
     });
   });
 
+//Profile Page
+router.get('/profile', (req, res) => {
+  res.sendFile('views/profile.html', {
+    root: __dirname + '/../',
+  });
+});
+
 //Products Page
 router.get('/products', (req, res) => {
     res.sendFile('views/products.html', {
@@ -17,13 +24,13 @@ router.get('/products', (req, res) => {
     });
   });
 
-  router.get('/products/:id', (req, res) => {
-    res.sendFile('views/productsview.html', {
+  router.get('/products/:id/add', (req, res) => {
+    res.sendFile('views/profile.html', {
       root: __dirname + '/../',
     });
   });
 
-//More Views
+//Static Views
 router.get('/skintype', (req, res) => {
   res.sendFile('views/skintype.html', {
     root: __dirname + '/../',

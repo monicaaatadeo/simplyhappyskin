@@ -8,7 +8,10 @@ const ctrl = require('../controllers');
 // ======== PRODUCTS ======== //
 router.get('/products', ctrl.apiCtrl.findAll);
 
-router.get('/products/:id/add', ctrl.apiCtrl.show);
+router.get('/profile/add/:id', ctrl.apiCtrl.update);
+//get valur of product from here(req.params)
+
+router.get('/profile', ctrl.apiCtrl.findAll)
 
 
 // ======== AUTH ======== //

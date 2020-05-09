@@ -24,7 +24,7 @@ router.get('/products', (req, res) => {
     });
   });
 
-  router.get('/products/:id/add', (req, res) => {
+  router.get('/profile/add/:id', (req, res) => {
     res.sendFile('views/profile.html', {
       root: __dirname + '/../',
     });

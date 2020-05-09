@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const List = require('./list')
+const Products = require('./products')
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema ({
@@ -17,7 +17,7 @@ const UserSchema = new Schema ({
         required: [true, 'Password is required']
     },
     skin_type: String, 
-    list: [List.schema]
+    products: [Products.schema]
 })
 
 const User = mongoose.model('User', UserSchema)

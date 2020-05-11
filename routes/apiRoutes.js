@@ -12,7 +12,7 @@ router.get('/profile/add/:id', ctrl.apiCtrl.update);
 
 router.delete('/profile/add/:productId/:prodId', ctrl.apiCtrl.destroyProducts);
 
-router.post('/profile/add/:id/name', ctrl.apiCtrl.createName)
+
 
 
 

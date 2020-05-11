@@ -25,7 +25,7 @@ function getProductTemplate(product) {
     return `
     <div class="col-md-4 mb-4">
     <div id="${product._id}" class="card  shadow-lg p-3 mb-5 bg-white rounded ">
-   <span class="close">&times;</span>
+  
     <img src="${product.image}" class="card-img-top" alt="${product.name}" />
       <div class="card-body">
         <h5 class="card-title">
@@ -40,44 +40,8 @@ function getProductTemplate(product) {
     `
 }
 
-//  
+//////// <span class="close">&times;</span>
 
-profileForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const name = document.getElementById('name');
-  const city = document.getElementById('city');
-
-  const newName = {
-    name: name.value,
-    city: city.value,
-  };
-  console.log('submit', newName);
-
-  window.location = `/profile/add/${productId}`;
-
-  fetch(`${API_BASE}/profile/add/${productId}/name`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newName),
-  })
-    .then((stream) => stream.json())
-    .then((res) => {
-      console.log(res);
-      if (res.status === 201) {
-        window.location = `/profile/add/${productId}`;
-      }
-    })
-    .catch((err) => console.log(err));
-});
-
-function CollapseForm() {
-  document.getElementById('form-group').submit()
-}
-
-
-////////
 products.addEventListener('click', (event) => {
   if (event.target.classList.contains('close')) {
     deleteProduct(event);

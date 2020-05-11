@@ -24,11 +24,13 @@ router.get('/products', (req, res) => {
     });
   });
 
+  //Add Routine
   router.get('/profile/add/:id', (req, res) => {
     res.sendFile('views/profile.html', {
       root: __dirname + '/../',
     });
   });
+
 
   router.get('/profile/add/:id/:id', (req, res) => {
     res.sendFile('views/profile.html', {
@@ -36,11 +38,7 @@ router.get('/products', (req, res) => {
     });
   });
 
-  router.get('/profile/add/:id/name', (req, res) => {
-    res.sendFile('views/profile.html', {
-      root: __dirname + '/../',
-    });
-  });
+
 
 //Static Views
 router.get('/skintype', (req, res) => {

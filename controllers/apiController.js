@@ -14,6 +14,8 @@ const findAll = (req, res) => {
     });
   }; //works!
 
+
+
   const update = (req, res) => {
     db.Products.findById(req.params.id, (err, foundProducts) => {
       if (err) {
@@ -25,60 +27,7 @@ const findAll = (req, res) => {
   }; //works
 
 
-  // const destroyProducts = (req, res) => {
-  //   db.Products.findById(req.params.id, (err, foundProd) => {
-  //     if (err) {
-  //       return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-  //     }
-  //     const productToDelete = foundProd.products.id(req.params.id)
-  //     productToDelete.remove(); 
-
-  //     foundProd.save((err, savedProd) => {
-  //       if (err) {
-  //         return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-  //       }   
-            
-  //     db.Products.findByIdAndDelete(req.params.id, (err, deleteProduct) => {
-  //       if (err) {
-  //         return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-  //       }
-  //       res.json(deleteProduct)
-  //     })     
-  //     })
-  //   })
-
-  // }
-
-  const createName = (req, res) => {
-    console.log(req.body)
-    
-    db.User.create(req.body, (err, newName) => {
-      if (err) {
-        return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-      }
-  
-      db.Products.findById(req.params.id, (err, foundProduct) => {
-        if (err) {
-          return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-        }
-  
-        foundProduct.products.push(newName);
-  
-        // Save 
-        foundProduct.save((err, savedProduct) => {
-          if (err) {
-            return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-          }
-  
-          res.json(newName);
-        });
-      });
-    });
-  };
-
-
   const destroyProducts = (req, res) => {
-    // Find City By ID
     db.Products.findById(req.params.productId, (err, foundProducts) => {
       if (err) {
         return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
@@ -113,27 +62,9 @@ const findAll = (req, res) => {
   };
 
 
-  // const update = (req, res) => {
-  //   db.User.findById(req.session.currentUser._id, (err, foundUser) => {
-  //     if (err) {
-  //       return res.status(400).json({ status: 400, error: "User not found." });
-  //     }
-  
-  //     res.json(foundUser);
-  //     //once you get user, update products list 
-  //     //push new product ID into user obj
-  //     //save 
-  //     //this will update user with that product
-
-  //     //last: redirect to profile page
-  //   });
-  //   console.log(req.session);
-  //   return res.status(200)
-  // };
 
   module.exports = {
       findAll,
       update,
-      createName,
       destroyProducts,
   }

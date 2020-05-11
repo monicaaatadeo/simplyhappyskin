@@ -137,7 +137,7 @@ const products = [
         image: "https://www.sephora.com/productimages/sku/s2338325-main-zoom.jpg?imwidth=583", 
         link: "https://www.sephora.com/product/innisfree-daily-uv-defense-sunscreen-spf-36-P456392?icid2=products%20grid:p456392:product",
         skin_type: ["Combination"]
-    },
+    }
     
 ]
 

@@ -10,20 +10,6 @@ const products = [
         skin_type: ["Normal"]
     },
     {
-        name: "Tatcha Water Cream", 
-        type:"Moisturizer",
-        image: "https://www.sephora.com/productimages/sku/s1932920-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
-        link: "https://www.sephora.com/product/the-water-cream-P418218",
-        skin_type: ["Normal", "Combination"]
-    },
-    {
-        name: "Clinique Broad Spectrum Sunscreen", 
-        type:"Sunscreen",
-        image: "https://www.sephora.com/productimages/sku/s1809383-main-zoom.jpg?imwidth=583", 
-        link: "https://www.sephora.com/product/broad-spectrum-spf-50-mineral-sunscreen-fluid-for-face-P410101?icid2=products%20grid:p410101:product",
-        skin_type: ["Normal", "Oily"]
-    },
-    {
         name: "The Ordinary Squalene Cleanser", 
         type:"Cleanser",
         image: "https://www.sephora.com/productimages/sku/s2238988-main-zoom.jpg?imwidth=583", 
@@ -36,6 +22,20 @@ const products = [
         image: "https://www.sephora.com/productimages/sku/s2306108-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
         link: "https://www.sephora.com/product/milk-makeup-vegan-milk-moisturizer-P453253?icid2=use%20it%20with:p453253:product",
         skin_type: ["Normal", "Dry"]
+    },    
+    {
+        name: "Tatcha Water Cream", 
+        type:"Moisturizer",
+        image: "https://www.sephora.com/productimages/sku/s1932920-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/the-water-cream-P418218",
+        skin_type: ["Normal", "Combination"]
+    },
+    {
+        name: "Clinique Broad Spectrum Sunscreen", 
+        type:"Sunscreen",
+        image: "https://www.sephora.com/productimages/sku/s1809383-main-zoom.jpg?imwidth=583", 
+        link: "https://www.sephora.com/product/broad-spectrum-spf-50-mineral-sunscreen-fluid-for-face-P410101?icid2=products%20grid:p410101:product",
+        skin_type: ["Normal", "Oily"]
     },
     {
         name: "Biossance Sunscreen", 
@@ -55,6 +55,13 @@ const products = [
         skin_type: ["Dry"]
     },
     {
+        name: "Milk Makeup Vegan Milk Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s2306330-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/milk-makeup-vegan-milk-cleanser-P456126?icid2=products%20grid:p456126:product",
+        skin_type: ["Dry"]
+    },    
+    {
         name: "First Aid Beauty Ultra Repair Cream", 
         type: "Moisturizer",
         image: "https://www.sephora.com/productimages/sku/s1309590-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
@@ -68,16 +75,10 @@ const products = [
         link: "https://www.sephora.com/product/green-defense-daily-mineral-sunscreen-P449188?icid2=products%20grid:p449188:product",
         skin_type: ["Dry"]
     },
-    {
-        name: "Milk Makeup Vegan Milk Cleanser", 
-        type:"Cleanser",
-        image: "https://www.sephora.com/productimages/sku/s2306330-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
-        link: "https://www.sephora.com/product/milk-makeup-vegan-milk-cleanser-P456126?icid2=products%20grid:p456126:product",
-        skin_type: ["Dry"]
-    },
+
  
 
-    //OILY -- Routine 1, SPF Routine 2
+    //OILY -- All Routines
     {
         name: "Clinique Foaming Cleanser", 
         type:"Cleanser",
@@ -85,6 +86,13 @@ const products = [
         link: "https://www.sephora.com/product/rinse-off-foaming-cleanser-P122762?icid2=products%20grid:p122762:product",
         skin_type: ["Oily"]
     },
+    {
+        name: "Olehenriksen Foaming Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s1910413-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/the-clean-truth-foaming-cleanser-P211343?icid2=products%20grid:p211343:product",
+        skin_type: ["Oily"]
+    },    
     {
         name: "Farmacy Oil-Free Gel", 
         type: "Moisturizer",
@@ -99,17 +107,9 @@ const products = [
         link: "https://www.sephora.com/product/100-mineral-smooth-poreless-matte-screen-spf-40-P434558",
         skin_type: ["Oily", "Combination"]
     },
-    {
-        name: "Olehenriksen Foaming Cleanser", 
-        type:"Cleanser",
-        image: "https://www.sephora.com/productimages/sku/s1910413-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
-        link: "https://www.sephora.com/product/the-clean-truth-foaming-cleanser-P211343?icid2=products%20grid:p211343:product",
-        skin_type: ["Oily"]
-    },
-  
 
 
-    //COMBINATION -- Routine 1, Moisturizer Routine 2
+    //COMBINATION -- All Routines
     {
         name: "The Inkey List Salicylic Acid Cleanser", 
         type: "Cleanser",
@@ -117,6 +117,13 @@ const products = [
         link: "https://www.sephora.com/product/salicylic-acid-cleanser-P443833?icid2=products%20grid:p443833:product",
         skin_type: ["Combination"]
     },
+    {
+        name: "Tatcha Deep Cleanse Exfolating Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s2023646-main-zoom.jpg?pb=2020-03-allure-best-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/the-deep-cleanse-P427536?skuId=2023646&icid2=products%20grid:p427536:product",
+        skin_type: ["Combination"]
+    },    
     {
         name: "First Aid Beauty Oil-Control Moisturizer", 
         type: "Moisturizer",
@@ -131,14 +138,6 @@ const products = [
         link: "https://www.sephora.com/product/innisfree-daily-uv-defense-sunscreen-spf-36-P456392?icid2=products%20grid:p456392:product",
         skin_type: ["Combination"]
     },
-    {
-        name: "Tatcha Deep Cleanse Exfolating Cleanser", 
-        type:"Cleanser",
-        image: "https://www.sephora.com/productimages/sku/s2023646-main-zoom.jpg?pb=2020-03-allure-best-2019&imwidth=583", 
-        link: "https://www.sephora.com/product/the-deep-cleanse-P427536?skuId=2023646&icid2=products%20grid:p427536:product",
-        skin_type: ["Combination"]
-    },
-
     
 ]
 

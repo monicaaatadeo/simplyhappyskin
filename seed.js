@@ -1,7 +1,7 @@
 const db = require('./models');
 
 const products = [
-    //NORMAL -- Routine 1
+    //NORMAL -- All Routines
     {
         name: "Youth To The People Superfood Antioxidant Cleanser", 
         type: "Cleanser",
@@ -23,8 +23,30 @@ const products = [
         link: "https://www.sephora.com/product/broad-spectrum-spf-50-mineral-sunscreen-fluid-for-face-P410101?icid2=products%20grid:p410101:product",
         skin_type: ["Normal", "Oily"]
     },
+    {
+        name: "The Ordinary Squalene Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s2238988-main-zoom.jpg?imwidth=583", 
+        link: "https://www.sephora.com/product/the-ordinary-squalane-cleanser-P444718?skuId=2238988&icid2=products%20grid:p444718:product",
+        skin_type: ["Normal"]
+    },
+    {
+        name: "Milk Makeup Vegan Milk Moisturizer", 
+        type:"Moisturizer",
+        image: "https://www.sephora.com/productimages/sku/s2306108-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/milk-makeup-vegan-milk-moisturizer-P453253?icid2=use%20it%20with:p453253:product",
+        skin_type: ["Normal", "Dry"]
+    },
+    {
+        name: "Biossance Sunscreen", 
+        type:"Sunscreen",
+        image: "https://www.sephora.com/productimages/sku/s2347789-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/biossance-squalane-zinc-sheer-mineral-sunscreen-spf-30-pa-P456410?icid2=products%20grid:p456410:product",
+        skin_type: ["Normal", "Dry"]
+    },
 
-    //DRY -- Routine 1
+
+    //DRY -- All Routines
     {
         name: "First Aid Beauty Pure Skin Face Cleanser", 
         type:"Cleanser",
@@ -46,6 +68,14 @@ const products = [
         link: "https://www.sephora.com/product/green-defense-daily-mineral-sunscreen-P449188?icid2=products%20grid:p449188:product",
         skin_type: ["Dry"]
     },
+    {
+        name: "Milk Makeup Vegan Milk Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s2306330-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/milk-makeup-vegan-milk-cleanser-P456126?icid2=products%20grid:p456126:product",
+        skin_type: ["Dry"]
+    },
+ 
 
     //OILY -- Routine 1, SPF Routine 2
     {
@@ -69,6 +99,15 @@ const products = [
         link: "https://www.sephora.com/product/100-mineral-smooth-poreless-matte-screen-spf-40-P434558",
         skin_type: ["Oily", "Combination"]
     },
+    {
+        name: "Olehenriksen Foaming Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s1910413-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/the-clean-truth-foaming-cleanser-P211343?icid2=products%20grid:p211343:product",
+        skin_type: ["Oily"]
+    },
+  
+
 
     //COMBINATION -- Routine 1, Moisturizer Routine 2
     {
@@ -91,7 +130,15 @@ const products = [
         image: "https://www.sephora.com/productimages/sku/s2338325-main-zoom.jpg?imwidth=583", 
         link: "https://www.sephora.com/product/innisfree-daily-uv-defense-sunscreen-spf-36-P456392?icid2=products%20grid:p456392:product",
         skin_type: ["Combination"]
-    }
+    },
+    {
+        name: "Tatcha Deep Cleanse Exfolating Cleanser", 
+        type:"Cleanser",
+        image: "https://www.sephora.com/productimages/sku/s2023646-main-zoom.jpg?pb=2020-03-allure-best-2019&imwidth=583", 
+        link: "https://www.sephora.com/product/the-deep-cleanse-P427536?skuId=2023646&icid2=products%20grid:p427536:product",
+        skin_type: ["Combination"]
+    },
+
     
 ]
 

@@ -14,6 +14,8 @@ router.get('/profile/add/:id', ctrl.apiCtrl.update);
 router.get('/profile', ctrl.apiCtrl.findAll)
 
 
+
+
 // ======== AUTH ======== //
 router.post('/signup', ctrl.authCtrl.signup);
 router.post('/login', ctrl.authCtrl.login);

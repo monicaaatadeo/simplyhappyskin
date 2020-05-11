@@ -42,6 +42,8 @@ const findAll = (req, res) => {
     });
   }; //works
 
+
+
   // const update = (req, res) => {
   //   console.log("------------------------------------------------", req);
   //   db.Products.findById(req.params.id, (err, newProducts) => {
@@ -86,7 +88,8 @@ const findAll = (req, res) => {
 // };
   
 
+
   module.exports = {
       findAll,
-      update,
+      update
   }

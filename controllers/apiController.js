@@ -49,6 +49,34 @@ const findAll = (req, res) => {
 
   // }
 
+  const createName = (req, res) => {
+    console.log(req.body)
+    
+    db.User.create(req.body, (err, newName) => {
+      if (err) {
+        return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+      }
+  
+      db.Products.findById(req.params.id, (err, foundProduct) => {
+        if (err) {
+          return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+        }
+  
+        foundProduct.products.push(newName);
+  
+        // Save 
+        foundProduct.save((err, savedProduct) => {
+          if (err) {
+            return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+          }
+  
+          res.json(newName);
+        });
+      });
+    });
+  };
+
+
   const destroyProducts = (req, res) => {
     // Find City By ID
     db.Products.findById(req.params.productId, (err, foundProducts) => {
@@ -106,5 +134,6 @@ const findAll = (req, res) => {
   module.exports = {
       findAll,
       update,
+      createName,
       destroyProducts,
   }

@@ -2,6 +2,7 @@ console.log('Profile');
 const API_BASE = '/api/v1';
 const products = document.getElementById('products');
 const productId = window.location.pathname.split('/')[3];
+const profileForm = document.getElementById('newName');
 console.log('Product ID = ', productId);
 
 function getOneProduct() {
@@ -41,6 +42,42 @@ function getProductTemplate(product) {
 
 //  
 
+profileForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = document.getElementById('name');
+  const city = document.getElementById('city');
+
+  const newName = {
+    name: name.value,
+    city: city.value,
+  };
+  console.log('submit', newName);
+
+  window.location = `/profile/add/${productId}`;
+
+  fetch(`${API_BASE}/profile/add/${productId}/name`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newName),
+  })
+    .then((stream) => stream.json())
+    .then((res) => {
+      console.log(res);
+      if (res.status === 201) {
+        window.location = `/profile/add/${productId}`;
+      }
+    })
+    .catch((err) => console.log(err));
+});
+
+function CollapseForm() {
+  document.getElementById('form-group').submit()
+}
+
+
+////////
 products.addEventListener('click', (event) => {
   if (event.target.classList.contains('close')) {
     deleteProduct(event);

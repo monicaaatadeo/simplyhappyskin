@@ -45,9 +45,9 @@
       <div class="navbar-nav">
         <a class="nav-item nav-link float-right" href="/">Home<span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="/products">Products</a>
-        <a class="nav-item nav-link" href="/profile">Profile</a>
-        <a class="nav-item nav-link" href="/signup">Sign Up</a>
-        <a class="nav-item nav-link" href="" data-toggle="modal" data-target="#elegantModalForm">Log In</a>
+        <!-- <a class="nav-item nav-link" href="/profile">Profile</a> -->
+        <!-- <a class="nav-item nav-link" href="/signup">Sign Up</a>
+        <a class="nav-item nav-link" href="" data-toggle="modal" data-target="#elegantModalForm">Log In</a> -->
       </div>
     </div>
   </nav>
@@ -88,24 +88,35 @@
 
 <h1 class = 'display-4 text-muted text-center'>Profile</h1>
 
-
+<!-- PROFILE SIDE -->
 <div class="profileside">
-
-
 <div class="card-container">
   <img
       class="round"
       src="http://icon-library.com/images/new-user-icon/new-user-icon-24.jpg"
       alt="user"
   />
-  <h2 class="mb-4">Random User</h2>
-  <h6>San Francisco</h6>
-<select class="ui dropdown">
-  <option value="3">Normal</option>
-  <option value="2">Dry</option>
-  <option value="1">Oily</option>
-  <option value="0">Combination</option>
-</select>
+  <form id="newName">
+    <div class="form-group">
+        <!-- <label for="name">Name</label>
+        <input id="name" type="text" name="name" class="form-control form-control-lg" /> -->
+      <h2 class="mb-4">Monica Tadeo</h2>
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="city">City</label> -->
+        <!-- <input id="city" type="text" name="city" class="form-control form-control-lg" /> -->
+        <h6>San Francisco</h6>
+      </div>
+
+    <select class="ui dropdown">
+      <option value="3">Normal</option>
+      <option value="2">Dry</option>
+      <option value="1">Oily</option>
+      <option value="0">Combination</option>
+    </select>
+    <!-- <button type="submit" onclick="CollapseForm()" class="btn btn-primary float-right">Submit</button> -->
+</form>
 </div>
 
 
@@ -113,7 +124,7 @@
 
 
 
-
+<!-- PRODUCT SIDE -->
 <div class="productsside">
   <h3>Your Routine</h3>
 <main class="mb-5">

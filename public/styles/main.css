@@ -51,6 +51,7 @@ body {
   width: 66.66%;
   float: left;
   height: 100px;
+  margin: auto;
 }
 
 h3 {

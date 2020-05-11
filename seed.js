@@ -95,7 +95,7 @@ const products = [
     
 ]
 
-// Delete All Products
+// // Delete All Products
 console.log('Deleting all products');
 
 db.Products.deleteMany({}, (err, result) => {
@@ -116,4 +116,4 @@ db.Products.deleteMany({}, (err, result) => {
     console.log(`Successfully created ${newProducts.length} products.`);
     process.exit();
   });
-});
+}); //works!

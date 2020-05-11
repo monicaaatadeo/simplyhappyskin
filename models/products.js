@@ -9,7 +9,8 @@ const ProductsSchema = new Schema ({
     skin_type: {
         type: Array,
         items: {type: String}
-    }
+    },
+    profile: []
 })
 
 const Products = mongoose.model('Products', ProductsSchema)

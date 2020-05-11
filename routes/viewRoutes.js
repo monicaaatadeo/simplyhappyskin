@@ -30,6 +30,14 @@ router.get('/products', (req, res) => {
     });
   });
 
+  router.get('/profile/add/:id/:id', (req, res) => {
+    res.sendFile('views/profile.html', {
+      root: __dirname + '/../',
+    });
+  });
+
+
+
 //Static Views
 router.get('/skintype', (req, res) => {
   res.sendFile('views/skintype.html', {
@@ -50,17 +58,6 @@ router.get('/signup', (req, res) => {
   });
 });
 
-// ======== PROFILE ======== //
-router.get('/profile', (req, res) => {
-  // if (!req.session.currentUser) {
-  //   // Unauthorized, Redirect to Login Page
-  //   return res.redirect('/signup');
-  // }
-
-  res.sendFile('views/profile.html', {
-    root: __dirname + '/../',
-  });
-});
 
 
 module.exports = router;

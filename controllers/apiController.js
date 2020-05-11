@@ -12,7 +12,78 @@ const findAll = (req, res) => {
   
       res.json(allProducts);
     });
+  }; //works!
+
+  const update = (req, res) => {
+    db.Products.findById(req.params.id, (err, foundProducts) => {
+      if (err) {
+        return res.status(400).json({status: 400, error: 'Products not found'});
+      }
+
+      res.json(foundProducts);
+    });
+  }; //works
+
+
+  // const destroyProducts = (req, res) => {
+  //   db.Products.findById(req.params.id, (err, foundProd) => {
+  //     if (err) {
+  //       return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  //     }
+  //     const productToDelete = foundProd.products.id(req.params.id)
+  //     productToDelete.remove(); 
+
+  //     foundProd.save((err, savedProd) => {
+  //       if (err) {
+  //         return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  //       }   
+            
+  //     db.Products.findByIdAndDelete(req.params.id, (err, deleteProduct) => {
+  //       if (err) {
+  //         return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  //       }
+  //       res.json(deleteProduct)
+  //     })     
+  //     })
+  //   })
+
+  // }
+
+  const destroyProducts = (req, res) => {
+    // Find City By ID
+    db.Products.findById(req.params.productId, (err, foundProducts) => {
+      if (err) {
+        return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+      }
+  
+      // Find ID
+      const productToDelete = foundProducts.products.id(req.params.productId);
+  
+      if (!productToDelete) {
+        return res.status(400).json({status: 400, error: 'Could not find product'});
+      }
+  
+      // Delete from record
+      productToDelete.remove();
+  
+      // Save 
+      foundProducts.save((err, savedProducts) => {
+        if (err) {
+          return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+        }
+  
+        // Delete indefinitely
+        db.Product.findByIdAndDelete(req.params.productId, (err, deletedProducts) => {
+          if (err) {
+            return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+          }
+  
+          res.json(deletedProducts);
+        });
+      });
+    });
   };
+
 
   // const update = (req, res) => {
   //   db.User.findById(req.session.currentUser._id, (err, foundUser) => {
@@ -32,64 +103,8 @@ const findAll = (req, res) => {
   //   return res.status(200)
   // };
 
-  const update = (req, res) => {
-    db.Products.findById(req.params.id, (err, foundProducts) => {
-      if (err) {
-        return res.status(400).json({status: 400, error: 'Products not found'});
-      }
-
-      res.json(foundProducts);
-    });
-  }; //works
-
-
-
-  // const update = (req, res) => {
-  //   console.log("------------------------------------------------", req);
-  //   db.Products.findById(req.params.id, (err, newProducts) => {
-  //     if (err) {
-  //       return res.status(500).json({ status: 500, error: "database error!" });
-  //     }
-  //     db.User.findById(req.params.productId, (err, foundUser) => {
-  //       if (err) {
-  //         return res
-  //           .status(400)
-  //           .json({ status: 400, error: `That ain't the User!` });
-  //       }
-  //       foundUser.productId.push(newProducts);
-  //       foundUser.save((err, savedUser) => {
-  //         if (err) {
-  //           return res
-  //             .status(400)
-  //             .json({ status: 400, error: "Unable to save User." });
-  //         }
-  //         return res.json(newProducts);
-  //       });
-  //     });
-  //   });
-  // };
-
-
-//   const update = (req, res) => {
-//     db.User.findById(req.params.User._id, (err, foundUser) => {
-//         if(err) {
-//             return res
-//             .status(400)
-//             .json({status: 400, error: 'Something went wrong, please try again.'});
-//         }
-
-//         const foundProducts = foundUser.Products.id(req.params.Product._id);
-
-//         if (!foundProducts) {
-//             res.status(404).json({status: 404, error: 'Could not find products'});
-//         }
-//         res.json(foundProducts);
-//     });
-// };
-  
-
-
   module.exports = {
       findAll,
-      update
+      update,
+      destroyProducts,
   }

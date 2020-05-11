@@ -9,9 +9,10 @@ const ctrl = require('../controllers');
 router.get('/products', ctrl.apiCtrl.findAll);
 
 router.get('/profile/add/:id', ctrl.apiCtrl.update);
-//get valur of product from here(req.params)
 
-router.get('/profile', ctrl.apiCtrl.findAll)
+router.delete('/profile/add/:productId/:prodId', ctrl.apiCtrl.destroyProducts);
+
+
 
 
 // ======== AUTH ======== //
